@@ -69,3 +69,6 @@ Bundler/OrderedGems:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+Style/Documentation:
+  Enabled: false

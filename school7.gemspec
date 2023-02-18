@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.files += Dir['*.{md}']
   s.files += %w[Rakefile Gemfile school7.gemspec LICENSE]
 
-  s.executables = s.files.grep(%r{\Abin/}) { |f| File.basename(f) }
+  s.executables += %w[school7_food]
   s.require_paths = ["lib"]
   s.required_ruby_version = ">= 2.7"
 end

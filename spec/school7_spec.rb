@@ -8,4 +8,10 @@ RSpec.describe School7 do
   it "does something useful" do
     expect(1 + 9).to be(10)
   end
+
+  describe School7::Food do
+    it "load config by path" do
+      expect(described_class.load_config("")).to eq "ok"
+    end
+  end
 end
