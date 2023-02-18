@@ -1,38 +1,33 @@
-# frozen_string_literal: true
-
 require_relative "lib/school7/version"
 
-Gem::Specification.new do |spec|
-  spec.name = "school7"
-  spec.version = School7::VERSION
-  spec.authors = ["Alexander Feodorov"]
-  spec.email = ["vester@unixcomp.org"]
+Gem::Specification.new do |s|
+  s.name = "school7"
+  s.version = School7::VERSION
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.required_ruby_version = ">= 2.6.0"
+  s.metadata = {
+    "bug_tracker_uri" => "https://github.com/unixs/school7-gem/issues",
+    "changelog_uri" => "https://github.com/unixs/school7-gem/blob/master/CHANGELOG.md",
+    "documentation_uri" => "https://github.com/unixs/school7-gem/wiki",
+    "homepage_uri" => "https://github.com/unixs/school7-gem",
+    "source_code_uri" => "https://github.com/unixs/school7-gem",
+    "wiki_uri" => "https://github.com/unixs/school7-gem/wiki",
+    "rubygems_mfa_required" => "true"
+  }
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  s.platform = Gem::Platform::RUBY
+  s.summary = "Tools for school7"
+  s.description = "Tools & libraries for school7"
+  s.authors = ["Alexander Feodorov"]
+  s.email = ["webmaster@unixcomp.org"]
+  s.licenses = ['LGPL-3.0-or-later']
+  s.homepage = "https://github.com/unixs/school7-gem"
+  # s.extensions = ["ext/#{s.name}/extconf_cmake.rb"]
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  s.files = Dir['{bin,lib,spec}/**/*']
+  s.files += Dir['*.{md}']
+  s.files += %w[Rakefile Gemfile school7.gemspec LICENSE]
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (File.expand_path(f) == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|circleci)|appveyor)})
-    end
-  end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
-
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  s.executables = s.files.grep(%r{\Abin/}) { |f| File.basename(f) }
+  s.require_paths = ["lib"]
+  s.required_ruby_version = ">= 2.7"
 end
